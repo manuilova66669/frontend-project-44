@@ -8,7 +8,7 @@ const runEngine = (description, getRoundData) => {
   console.log(`Hello, ${name}!`)
   console.log(description)
 
-  for (let i = 0; i < roundsCount; i += 1) {
+  for (let i = 0 i < roundsCount i += 1) {
     const [questionText, correctAnswer] = getRoundData()
     console.log(`Question: ${questionText}`)
     const userAnswer = question('Your answer: ')
