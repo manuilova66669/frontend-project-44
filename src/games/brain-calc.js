@@ -12,21 +12,20 @@ const generateRound = () => {
   let answer;
 
   switch (operator) {
-  case '+':
-    answer = num1 + num2;
-    break;
-  case '-':
-    answer = num1 - num2;
-    break;
-  case '*':
-    answer = num1 * num2;
-    break;
-  default:
-    break;
+    case '+':
+      answer = num1 + num2;
+      break;
+    case '-':
+      answer = num1 - num2;
+      break;
+    case '*':
+      answer = num1 * num2;
+      break;
+    default:
+      break;
   }
 
   return [question, String(answer)];
-};
+}
 
 export default () => runEngine(description, generateRound);
-
