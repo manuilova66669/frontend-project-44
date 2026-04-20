@@ -1,16 +1,29 @@
 #!/usr/bin/env node
 
-import { Command } from 'commander';
-import runEvenGame from '../src/games/even.js';
+import readlineSync from 'readline-sync';
+import welcomeUser from '../src/cli.js';
 
-const program = new Command();
+const name = welcomeUser();
 
-program
-  .name('brain-even')
-  .description('Answer "yes" if the number is even, otherwise answer "no".')
-  .version('1.0.0')
-  .action(() => {
-    runEvenGame();
-  });
+// правило
+console.log('Answer "yes" if the number is even, otherwise answer "no"');
 
-program.parse(process.argv);
+// генерация числа
+const randomNumber = Math.floor(Math.random() * 100);
+
+// вывод вопроса
+console.log(`Question: ${randomNumber}`);
+
+// ввод ответа
+const answer = readlineSync.question('Your answer: ');
+
+// правильный ответ
+const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
+
+// проверка
+if (answer === correctAnswer) {
+  console.log('Correct!');
+} else {
+  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
+  console.log(`Let's try again, ${name}!`);
+}
