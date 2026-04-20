@@ -10,17 +10,17 @@ const getRoundData = () => {
   const question = `${num1} ${operator} ${num2}`;
   let result;
   switch (operator) {
-    case '+':
-      result = num1 + num2;
-      break;
-    case '-':
-      result = num1 - num2;
-      break;
-    case '*':
-      result = num1 * num2;
-      break;
-    default:
-      break;
+  case '+':
+    result = num1 + num2;
+    break;
+  case '-':
+    result = num1 - num2;
+    break;
+  case '*':
+    result = num1 * num2;
+    break;
+  default:
+    break;
   }
 
   const correctAnswer = String(result);
