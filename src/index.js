@@ -22,6 +22,6 @@ const runEngine = (description, getRoundData) => {
   }
 
   console.log(`Congratulations, ${name}!`);
-};
+}
 
 export default runEngine;
